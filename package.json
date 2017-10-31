@@ -1,0 +1,34 @@
+{
+  "name": "chill-prototyping",
+  "version": "1.0.0",
+  "description": "CHILL prototyping interview project",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "heroku-postbuild": "cd client && npm install && npm run build",
+    "concurmon": "concurrently \"nodemon server.js\" \"cd client && npm start\"",
+    "concur": "concurrently \"node server.js\" \"cd client && npm start\"",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:leelandmiller/chill-prototyping.git"
+  },
+  "keywords": [
+    "chill"
+  ],
+  "author": "leelandmiller",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/leelandmiller/chill-prototyping/issues"
+  },
+  "homepage": "https://github.com/leelandmiller/chill-prototyping#readme",
+  "dependencies": {
+    "body-parser": "^1.18.2",
+    "express": "^4.16.2",
+    "mysql2": "^1.4.2"
+  },
+  "devDependencies": {
+    "concurrently": "^3.5.0"
+  }
+}
