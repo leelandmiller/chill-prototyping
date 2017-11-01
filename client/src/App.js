@@ -18,7 +18,7 @@ class App extends Component {
 
     render() {
         return (
-            <div>
+            <div className='main-app'>
                 <Button pressedState={this.state.pressed} />
             </div>
         );

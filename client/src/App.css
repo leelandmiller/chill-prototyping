@@ -22,6 +22,18 @@
   font-size: large;
 }
 
+.main-app {
+    background-image: url('/snow.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 100vh;
+    display: -webkit-flex;
+    display: -ms-flex;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }
   to { transform: rotate(360deg); }
