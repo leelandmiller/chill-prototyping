@@ -1,7 +1,6 @@
 const express = require('express');
 const path    = require('path');
 const router  = express.Router();
-
 const connection = require('../config/connection');
 
 // 'get' route, queries the button MySQL table to retrieve its current state

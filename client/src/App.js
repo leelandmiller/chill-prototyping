@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import Button from './components/Button';
 import ButtonAPI from './utils/ButtonAPI';
 import './App.css';
+import io from 'socket.io-client';
+
+const socket = io();
 
 class App extends Component {
     // declare initial state of the button in React
@@ -11,6 +14,10 @@ class App extends Component {
 
     // when component mounts, get state of the button from MySQL
     componentDidMount(){
+        socket.on('connect', () => {
+            console.log('connected')
+        });
+
         this.getPressedState();
     }
 
