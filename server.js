@@ -24,6 +24,7 @@ io.on('connection', socket => {
     console.log('user connected');
     socket.on('press', data => {
         console.log(data);
+		socket.broadcast.emit('press', data);
     });
 });
 server.listen(PORT);

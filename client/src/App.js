@@ -4,7 +4,7 @@ import ButtonAPI from './utils/ButtonAPI';
 import './App.css';
 import io from 'socket.io-client';
 
-const socket = io();
+const socket = io('http://localhost:3001');
 
 class App extends Component {
     // declare initial state of the button in React
@@ -16,6 +16,10 @@ class App extends Component {
     componentDidMount(){
         socket.on('connect', () => {
             console.log('connected')
+        });
+
+        socket.on('press', () => {
+            this.getPressedState();
         });
 
         this.getPressedState();
@@ -34,6 +38,7 @@ class App extends Component {
     changePressedState = () => {
         ButtonAPI.changeButtonState(!this.state.pressed).then(newStateResults => {
             // call getPressedState to update the state of the button in React
+            socket.emit('press', 'The button was pressed');
             this.getPressedState();
         });
     }
